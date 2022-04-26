@@ -2,7 +2,7 @@
 export default {
   mount: {
     public: '/',
-    src: '/dist',
+    src: '/build',
   },
   plugins: [
     '@snowpack/plugin-svelte',
@@ -12,8 +12,9 @@ export default {
     // {"match": "routes", "src": ".*", "dest": "/index.html"},
   ],
   optimize: {
-    /* Example: Bundle your final build: */
-    // "bundle": true,
+    bundle: true,
+    minify: true,
+    target: 'es2018',
   },
   packageOptions: {
     knownEntrypoints: ['svelte','svelte/store'],
